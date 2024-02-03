@@ -17,9 +17,11 @@ const Login = () => {
     const [email , setEmail] = useState("");
     const [error , setError] = useState("");
 
-    // const login = () => {
-    //     navigate('/')
-    // }
+
+
+    const loginbtn = () => {
+        navigate('/register')
+    }
 
     const submitHandler = async (e) => {
       e.preventDefault();
@@ -68,19 +70,46 @@ const Login = () => {
       e.preventDefault();
       try{
         await googleSignIn();
-        navigate('/home');
+        toast.success("Login Success", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+      });
+  
+      // Set a timeout to navigate to the home page after 2 seconds
+      setTimeout(() => {
+          navigate("/");
+      }, 1000);
+        navigate('/');
       }catch(err)
       {
         setError(err.message);
+
+        toast.error(err.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+         // transition: "Bounce",
+          });
       }
     }
 
   return (
-    <div className='w-full h-screen bg-black flex justify-center items-center'>
+    <div className='w-full h-screen text-white overflow-hidden bg-black flex justify-center items-center'>
     
         <ToastContainer />
 
-      <div className='bg-white h-[85%] sm:h-[90%] w-[90%] km:flex rounded-md shadow-lg shadow-red-500/40 '>
+      <div className='bg-black h-[85%] sm:h-[90%] w-[90%] km:flex rounded-md shadow-red-500/40 '>
 
         <div className='md:w-[50%] flex flex-col justify-center items-center h-full p-10'>
         <form onSubmit={submitHandler}>
@@ -89,15 +118,15 @@ const Login = () => {
           <div className='text-center flex flex-col py-3 pr-1 items-center justify-center mt-5'>
             <div className='w-[250px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center mt-3 border-2 shadow-sm border-slate-200 rounded-md'>
               <FaUser className='text-[#7E7C7C]' />
-              <input className='outline-none px-2 py-2 ' onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email'/>
+              <input className='outline-none px-2 py-2 text-white bg-black ' onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email'/>
             </div>
             <div className='w-[250px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center border-2 shadow-sm mt-5 border-slate-200 rounded-md'>
               <IoKeySharp className='text-[#7E7C7C]' />
-              <input className='outline-none px-2 py-2 ' type='password' onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
+              <input className='text-white bg-black outline-none px-2 py-2 ' type='password' onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
             </div>
 
             <div className='flex w-[250px] xs:w-[280px] sm:w-[350px] px-2 py-3 justify-between decoration-none'>
-                <div><input className='list-none' type='checkbox'/>Remember</div>
+                <div><input className='text-white bg-black list-none' type='checkbox'/>Remember</div>
                 <div><h3>Forgot <span className='text-[#227eff]'>Password ?</span></h3></div>
             </div>
 
@@ -111,16 +140,15 @@ const Login = () => {
             </div>
 
             <div className='mt-6'>
-                    New Here ? <span onClick={() => {login()}} className='cursor-pointer text-[#227eff]'>Create a new Account .</span>
+                    New Here ? <span onClick={() => {loginbtn()}} className='cursor-pointer text-[#227eff]'>Create a new Account .</span>
             </div>
           </div>
           </form>
         </div>
       
-        <div className='hidden km:block w-[50%] h-full'>
-        <div className='w-[100%] h-full flex justify-center items-center bg-black'>
-          {/* <img width={"70%"} src='https://static.uacdn.net/production/_next/static/images/home-illustration.svg?q=75&auto=format%2Ccompress&w=384' />  */}
-        </div>
+        
+        <div className='hidden bg-black km:block sm:flex justify-center items-center w-[50%] h-screen'>
+           <img src='https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_700,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/246641e8-00d7-42f7-ac92-3207665e35f7.svg'/>
         </div>
       </div>
     </div>

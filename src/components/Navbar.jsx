@@ -4,10 +4,26 @@ import { FaUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link , NavLink } from 'react-router-dom';
 import { FaFireAlt } from "react-icons/fa";
+import { useUserAuth } from '../context/UserAuthContext'
+import { useNavigate } from 'react-router-dom';
 
 // import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
+
+  const {user , logout} = useUserAuth();
+    console.log(user);
+    const navigate = useNavigate();
+
+  //   const handleLogout = async () => {
+  //     try{
+  //         await logout();
+  //         navigate('/login');
+  //     }catch(err)
+  //     {
+  //         console.log(err.name);
+  //     }
+  // }
 
     const navIcons = [
         // {
@@ -86,9 +102,14 @@ const Navbar = () => {
             ))}
 
            <NavLink to={"/login"} >
-            <button className='xs:px-9  as:px-4 xs:py-2 md:ml-10 ss:ml-2 bg-primary hover:bg-black hover:text-primary hover:border-primary hover:border rounded-lg text-[] font-semibold'>
-              Login
-            </button>
+            {!user && 
+              <button className='xs:px-9  as:px-4 xs:py-2 md:ml-10 ss:ml-2 bg-primary hover:bg-black hover:text-primary hover:border-primary hover:border rounded-lg text-[] font-semibold'>
+             Login
+             </button>
+            }
+            {user &&
+              <div className='flex justify-center items-center'><img className='rounded-full w-[40px] h-[40px]' src={user.photoURL}/></div>
+            }
            </NavLink>
         </ul>
 
