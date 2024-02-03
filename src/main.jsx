@@ -12,6 +12,7 @@ import Exercise from './components/Exercise.jsx';
 import Hero from './components/Hero.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import AbsWorkout from './components/AbsWorkout.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -36,6 +37,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {/* <Route path='/' element={<Layout />} /> */}
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/abs-workout' element={<AbsWorkout />} />
         </Routes>
       </Router>
     </UserAuthContextProvider>
