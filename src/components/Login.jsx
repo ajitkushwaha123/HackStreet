@@ -116,7 +116,7 @@ const Login = () => {
           <h1 className='text-[#EE4F63] text-[35px] text-center font-bold font-poppins'>Login</h1>
           {/* <div>{error}</div> */}
           <div className='text-center flex flex-col py-3 pr-1 items-center justify-center mt-5'>
-            <div className='w-[250px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center mt-3 border-2 shadow-sm border-slate-200 rounded-md'>
+            <div className='w-[250px] xs:w-[280px] sm:w-[350px] flex pl-6 bg-black   items-center mt-3 border-2 shadow-sm border-slate-200 rounded-md'>
               <FaUser className='text-[#7E7C7C]' />
               <input className='outline-none px-2 py-2 text-white bg-black ' onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email'/>
             </div>
