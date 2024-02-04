@@ -31,9 +31,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/profile' 
           element={
             <ProtectedRoute>
+            <> 
+              <Navbar />
               <Profile />
+              <Footer />
+            </>
             </ProtectedRoute>
-          } />
+          }/>
           {/* <Route path='/' element={<Layout />} /> */}
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />

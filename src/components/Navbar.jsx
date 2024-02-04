@@ -38,7 +38,7 @@ const Navbar = () => {
         // },
         {
             id: "cart",
-            link:"/cart",
+            link:"/",
             icons : <FaFireAlt />,
         },
     ]
@@ -94,19 +94,24 @@ const Navbar = () => {
       <div className=''>
         <ul className='flex text-white as:text-[15px] xs:text-[18px] justify-center '>
             {navIcons.map((icons , index) => (
-                <li key = {icons.id} className='xs:mr-4 as:mr-2 as:w-[28px] as:h-[28px] xs:w-[40px] xs:h-[40px] border flex justify-center items-center rounded-full hover:text-primary hover:bg-black hover:border hover:border-primary'>
-                    <NavLink to={icons.link}>
+                <li key = {icons.id} className='xs:mr-4 as:mr-2 as:w-[28px] as:h-[28px] xs:w-[40px] xs:h-[40px] border flex justify-center items-center rounded-lg px-2 hover:text-primary hover:bg-black hover:border hover:border-primary'>
+                    <NavLink className='flex px-2 justify-center items-center' to={icons.link}>
                       {icons.icons}
+                      {user &&
+                        <p className='ml-1'>1</p>
+                      }
                     </NavLink>
                 </li>
             ))}
 
-           <NavLink to={"/login"} >
+            <NavLink to={"/login"} >
             {!user && 
               <button className='xs:px-9  as:px-4 xs:py-2 md:ml-10 ss:ml-2 bg-primary hover:bg-black hover:text-primary hover:border-primary hover:border rounded-lg text-[] font-semibold'>
              Login
              </button>
             }
+            </NavLink>
+            <NavLink to={"/profile"} >
             {user &&
               <div className='flex justify-center items-center'><img className='rounded-full w-[40px] h-[40px]' src={user.photoURL}/></div>
             }
