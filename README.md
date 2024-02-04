@@ -4,9 +4,9 @@ Video link : https://www.youtube.com/watch?feature=shared&v=v5QRt2xHtWw
 
 //  Features
 
-User Login
-User Register
-Personalised Exercise Plan
-workout tracker
-Heatmap tracker
-Task of the day
+User Login </br>
+User Register  </br>
+Personalised Exercise Plan  </br>
+workout tracker  </br>
+Heatmap tracker  </br>
+Task of the day  </br>
