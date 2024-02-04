@@ -37,8 +37,8 @@ const Navbar = () => {
         //     icons : <FaUser />,
         // },
         {
-            id: "cart",
-            link:"/",
+            id: "daily",
+            link:"/daily-task",
             icons : <FaFireAlt />,
         },
     ]
@@ -50,9 +50,9 @@ const Navbar = () => {
             title : "Home",
           },
           {
-            id: "poduct",
+            id: "exercise",
             title: "Exercises",
-            link : "/productpage",
+            link : "#exercise",
           },
           // {
           //   id: "menut",
@@ -62,13 +62,13 @@ const Navbar = () => {
           {
             id: "pages",
             title: "Daily Challenges",
-            link : "/register",
+            link : "/daily-task"
           },
-          {
-            id: "contact",
-            title: "Fitness Tracker",
-            link : "/contact",
-          },
+          // {
+          //   id: "contact",
+          //   title: "Fitness Tracker",
+          //   link : "/about",
+          // },
     ];
 
   return (
@@ -95,10 +95,10 @@ const Navbar = () => {
         <ul className='flex text-white as:text-[15px] xs:text-[18px] justify-center '>
             {navIcons.map((icons , index) => (
                 <li key = {icons.id} className='xs:mr-4 as:mr-2 as:w-[28px] as:h-[28px] xs:w-[40px] xs:h-[40px] border flex justify-center items-center rounded-lg px-2 hover:text-primary hover:bg-black hover:border hover:border-primary'>
-                    <NavLink className='flex px-2 justify-center items-center' to={icons.link}>
+                    <NavLink className='flex px-3 justify-center items-center' to={icons.link}>
                       {icons.icons}
                       {user &&
-                        <p className='ml-1'>1</p>
+                        <p className='ml-1'>6</p>
                       }
                     </NavLink>
                 </li>

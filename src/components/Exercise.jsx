@@ -8,6 +8,10 @@ const Exercise = () => {
       navigate('/abs-workout')
    }
 
+   const absWorkoutt = () => {
+      navigate('/chest-workout')
+   }
+
    const female = () => {
       setGender(1);
    }
@@ -18,7 +22,7 @@ const Exercise = () => {
 
    
   return (
-   <div className='bg-black w-full'>
+   <div id="exercise" className='bg-black w-full'>
        <div className='text-white pt-60 flex justify-center items-center '>
          <button onClick={() => {male()}} className='text-[white]  rounded-lg font-bold text-[20px] bg-primary px-10 py-2'>Male</button>
          <button onClick={() => {female()}} className='text-[white] ml-8 rounded-lg font-bold text-[20px] bg-primary px-10 py-2'>Female</button>
@@ -27,7 +31,7 @@ const Exercise = () => {
         <div className='w-full pb-10 z-[100] bg-black'>
           <h2 className='text-white font-serif font-bold text-[60px] pt-[50px] text-center'>With Equipment</h2>
           <div className='flex w-full px-[100px] justify-between mt-[60px]'>
-            <div className='ml-5' onClick={chestWorkout}>
+            <div className='ml-5' onClick={absWorkoutt}>
                <img className='rounded-lg absolute' width={"300px"} height={"270px"} src='https://tse4.mm.bing.net/th?id=OIP.ZVlIw-lVx0A8P2j29MAXKwHaE8&pid=Api&P=0&h=180'/>
                <div className='relative bg-[#00001087] w-[300px] flex justify-center items-center h-[250px]'>
                 <h3 className='text-white font-semibold uppercase font-serif text-[22px]'>Chest Workout</h3>

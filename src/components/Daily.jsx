@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import abs from "../assets/abs.png";
+import daily from "../assets/dialy.png";
 import { absWork } from '../context/Context';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer , toast  } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-const AbsWorkout = () => {
+const Daily = () => {
   const [seconds, setSeconds] = useState(20);
   const [isActive, setIsActive] = useState(false);
   const [changeText , setChangeText] = useState("Rest In");
@@ -53,44 +51,20 @@ const AbsWorkout = () => {
   const exerciseHandler = () => {
      setStart(true);
      setIsActive(true);
-     toast.success("Exercise Started", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-  });
   }
 
   const returnHome = () => {
-    setTimeout(() => {
-      toast.success("Exercise Completed", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      navigate('/profile');
-    }, 2000); // 2000 milliseconds = 2 seconds
+    navigate('/');
   }
-  
 
   const profileVisit = () => {
-
     navigate('/profile')
   }
   return (
     <div className='w-full h-screen flex items-center justify-between bg-black'>
       <div className='w-[50%] flex flex-col justify-center h-screen items-center'>
-       <h1 className='text-[70px] text-white text-bold'> AbsWorkout </h1>
-        <img className='' src={abs}/>
+       <h1 className='text-[60px] text-white top-10 absolute text-bold'> Daily Task</h1>
+        <img width={"380px"} className='absolute bottom-0' src={daily}/>
       </div>
 
     {!start &&
@@ -127,7 +101,7 @@ const AbsWorkout = () => {
       <div className="font-bold text-center text-[40px] flex justify-center items-center mt-5 text-black ">
         00 : {seconds}
       </div>
-      <ToastContainer />
+
       
       {/* <div className="bg-white w-[400px] border-t-2 border-[#bdbdbdd0] h-[60px] flex justify-center items-center fixed absolute py-2 bottom-0 top-[150%]"> */}
       <div className="white border-t-2 border-[#bdbdbdd0] h-[60px] flex justify-center items-center  w-[400px] fixed absolute py-2 bottom-0 left-0">
@@ -156,4 +130,4 @@ const AbsWorkout = () => {
   )
 }
 
-export default AbsWorkout;
+export default Daily;

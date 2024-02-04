@@ -24,12 +24,16 @@ const Register = () => {
         navigate('/login');
     }
 
+    const formNav = () => {
+      navigate('/form')
+    }
+
     const handlegoogleSignIn = async (e) => 
     {
       e.preventDefault();
       try{
         await googleSignIn();
-        navigate('/profile');
+        navigate('/form');
         toast.success("Login Success", {
           position: "top-right",
           autoClose: 5000,
@@ -69,7 +73,7 @@ const Register = () => {
         setError("");
         try{
           await signup(email , password);
-          register();
+          formNav();
           toast.success("Login Success", {
             position: "top-right",
             autoClose: 5000,

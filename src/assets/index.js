@@ -1,4 +1,5 @@
 import hero from "./hero.mp4";
 import loginImg from "./login.png";
 import abs from "./abs.png";
-export {hero  ,loginImg , abs};
+import daily from "./dialy.png";
+export {hero  ,loginImg , abs , daily};

@@ -68,7 +68,76 @@ imgGif : "https://i.pinimg.com/originals/ae/56/92/ae5692d5e1b32fbd52f839fb815e88
 title : "Ninja Fight",
 time : "00:20",
 },
+]
 
 
+export const chestIntermediateWork = [{
+  imgGif : "https://i.pinimg.com/originals/b3/66/ac/b366acaf2e2de503359cf6a9afe97b90.gif",
+   title : "Skull Crushers",
+   time : "00:30",
+},
 
+{
+  imgGif : "https://i.pinimg.com/originals/cc/1a/be/cc1abe06e0b39628230a159d25e64d30.gif",
+  title : "Dumbell Bench Press",
+  time : "00:30",
+},
+
+{
+imgGif : "https://i.pinimg.com/originals/1d/06/32/1d0632ec1cfb951eb0e606b16c58e14a.gif",
+title : "Dips",
+time : "00:30",
+},
+
+{
+  imgGif : "https://i.pinimg.com/originals/b3/66/ac/b366acaf2e2de503359cf6a9afe97b90.gif",
+   title : "Skull Crushers",
+   time : "00:30",
+},
+
+{
+  imgGif : "https://i.pinimg.com/originals/cc/1a/be/cc1abe06e0b39628230a159d25e64d30.gif",
+  title : "Dumbell Bench Press",
+  time : "00:30",
+},
+
+{
+imgGif : "https://i.pinimg.com/originals/1d/06/32/1d0632ec1cfb951eb0e606b16c58e14a.gif",
+title : "Dips",
+time : "00:30",
+},
+{
+  imgGif : "https://i.pinimg.com/originals/b3/66/ac/b366acaf2e2de503359cf6a9afe97b90.gif",
+   title : "Skull Crushers",
+   time : "00:30",
+},
+
+{
+  imgGif : "https://i.pinimg.com/originals/cc/1a/be/cc1abe06e0b39628230a159d25e64d30.gif",
+  title : "Dumbell Bench Press",
+  time : "00:30",
+},
+
+{
+imgGif : "https://i.pinimg.com/originals/1d/06/32/1d0632ec1cfb951eb0e606b16c58e14a.gif",
+title : "Dips",
+time : "00:30",
+},
+{
+  imgGif : "https://i.pinimg.com/originals/b3/66/ac/b366acaf2e2de503359cf6a9afe97b90.gif",
+   title : "Skull Crushers",
+   time : "00:30",
+},
+
+{
+  imgGif : "https://i.pinimg.com/originals/cc/1a/be/cc1abe06e0b39628230a159d25e64d30.gif",
+  title : "Dumbell Bench Press",
+  time : "00:30",
+},
+
+{
+imgGif : "https://i.pinimg.com/originals/1d/06/32/1d0632ec1cfb951eb0e606b16c58e14a.gif",
+title : "Dips",
+time : "00:30",
+},
 ]

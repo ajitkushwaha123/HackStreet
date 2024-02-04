@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import abs from "../assets/abs.png";
-import { absWork } from '../context/Context';
+import { chestIntermediateWork  } from '../context/Context';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer , toast  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const AbsWorkout = () => {
+const ChestWorkout = () => {
   const [seconds, setSeconds] = useState(20);
   const [isActive, setIsActive] = useState(false);
   const [changeText , setChangeText] = useState("Rest In");
-  const n = absWork.length;
+  const n = chestIntermediateWork.length;
 
   function toggle() {
     setIsActive(!isActive);
@@ -89,13 +89,13 @@ const AbsWorkout = () => {
   return (
     <div className='w-full h-screen flex items-center justify-between bg-black'>
       <div className='w-[50%] flex flex-col justify-center h-screen items-center'>
-       <h1 className='text-[70px] text-white text-bold'> AbsWorkout </h1>
+       <h1 className='text-[70px] text-white text-bold'> ChestWorkout </h1>
         <img className='' src={abs}/>
       </div>
 
     {!start &&
       <div className='h-[90vh] py-5 pr-40 p-5 overflow-y-scroll'>
-      {absWork.map((absExer , index) => {
+      {chestIntermediateWork.map((absExer , index) => {
         return (
           <div key={index} className='w-[400px] border-b-2 border-[#bdbdbdd0]  flex items-center px-2 shadow-lg mt-4 rounded-sm bg-white h-[120px]'>
             <img className='h-[100px] rounded-sm' src={absExer.imgGif} />
@@ -112,7 +112,7 @@ const AbsWorkout = () => {
     }
     {start &&
     <div className='h-[90vh] py-5 mr-40 w-[400px] absolute right-10 flex flex-col items-center overflow-hidden rounded-lg bg-white p-5'>
-    {absWork.map((next , index) => {
+    {chestIntermediateWork.map((next , index) => {
       if(index === showDiv) {
       return (
       <div key={index} className='h-[90vh]'>
@@ -156,4 +156,4 @@ const AbsWorkout = () => {
   )
 }
 
-export default AbsWorkout;
+export default ChestWorkout;
