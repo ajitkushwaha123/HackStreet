@@ -151,18 +151,18 @@ const Register = () => {
           <div className='text-center flex flex-col py-3 pr-1 items-center justify-center mt-5'>
             <div className={`w-[280px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center mt-1 border-2 shadow-sm ${name == 1 ? 'border-green-500' : name == 0 ? 'border-red-500' : ''} border-slate-200 rounded-md`}
 >
-              <FaUser className='text-[#7E7C7C]' />
+              <FaUser className='text-[#7E7C7C] text-[15px]' />
               <input className='outline-none px-2 py-2 text-white bg-black' type='username' onChange={usernameValidation} placeholder='Username'/>
             </div>
             <div className={`w-[280px] xs:w-[280px] sm:w-[350px] flex justify-normal sm:justify-between pl-6 items-center border-2 shadow-sm mt-5 ${correct == 1 ? 'border-green-500' : correct == 0 ? 'border-red-500' : ''} rounded-md`}>
-              <MdMarkEmailUnread className='text-[#7E7C7C]' />
-              <input className='text-white bg-black outline-none py-2 px-2 sm:mr-[70px] ' onChange={emailValidation} value={email} type='email' placeholder='Email'/>
-              {correct == '-1' && <FaExclamationCircle className='sm:mr-5' />}
-              {correct == '0' && <FaSkull className='sm:mr-5 text-primary' />}
-              {correct == '1' && <BsCheckCircleFill className='sm:mr-5 text-green-500'/>}
+              <MdMarkEmailUnread className='text-[#7E7C7C] w-[15px] text-[15px] h-[15px]' />
+              <input className='text-white bg-black outline-none py-2 px-2 sm:mr-[70px] text-[15px] ' onChange={emailValidation} value={email} type='email' placeholder='Email'/>
+              {correct == '-1' && <FaExclamationCircle className='sm:mr-5 w-[15px] h-[15px] text-[15px]' />}
+              {correct == '0' && <FaSkull className='sm:mr-5 text-primary w-[15px] text-[15px] h-[15px]' />}
+              {correct == '1' && <BsCheckCircleFill className='sm:mr-5 text-green-500 w-[15px] h-[15px]'/>}
             </div>
             <div className='w-[280px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center border-2 shadow-sm mt-5 border-slate-200 rounded-md'>
-              <IoKeySharp className='text-[#E0E0E0]' />
+              <IoKeySharp className='text-[#E0E0E0] text-[15px]' />
               <input className='text-white bg-black outline-none px-2 py-2 ' onChange={(e) => setPassword(e.target.value)}  type='password' placeholder='Password'/>
             </div>
 
