@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 const FormInfo = () => {
   const [ind , setInd] = useState(0);
+  const [gender , setGender] = useState('');
+  const [purpose , setPurpose] = useState(0);
+  const [level , setLevel] = useState(0);
+
+  console.log(gender);
 
   const nextbt = (e) => {
     e.preventDefault();
@@ -21,21 +26,22 @@ const FormInfo = () => {
   }
 
   return (
-    <div className='w-full h-screen flex  px-20 bg-black'>
-      <div className='w-[50%] flex flex-col justify-center items-center h-screen'>
+    <div className='w-full h-screen overflow-hidden flex  px-20 bg-black'>
+      <div className='w-[100%] flex flex-col justify-center items-center h-screen'>
         <form className='flex flex-col'> 
+
           {ind == 0  && 
             <div className='flex flex-col'>
               <div className='flex'>
-                <ul>
-                  <li>
+                <ul className='flex justify-center items-center'>
+                  <li onClick={() => setGender(0)} >
                     <input type="checkbox" id="myCheckbox1" />
                     <label htmlFor="myCheckbox1">
                       <img className='rounded-lg shadow-lg shadow-indigo-500/40' src="https://i.pinimg.com/236x/39/28/59/3928590c6abf5debc6c7ad59c974b9ad.jpg" />
                       <h2 className='text-white text-center pt-7 uppercase text-[20px] font-bold'>Male</h2>
                     </label>
                   </li>
-                  <li className='ml-10'>
+                  <li onClick={() => setGender(1)} className='ml-10'>
                     <input type="checkbox" id="myCheckbox2" />
                     <label htmlFor="myCheckbox2">
                       <img className='rounded-lg shadow-lg shadow-indigo-500/40' src="https://i.pinimg.com/236x/c9/40/27/c940276c7cc6b275f44fa71dd04b557c.jpg" />
@@ -45,11 +51,12 @@ const FormInfo = () => {
                 </ul>
               </div>
               <div className='flex text-white flex-col justify-center items-center'>
-                <button onClick={(e) => {nextbt(e)}} className='flex justify-center px-7 py-1 bg-primary mt-10 shadow-xl shadow-indigo-500/40 text-white rounder-lg items-center'>Next</button>
+                <button onClick={(e) => {nextbt(e)}} className='flex justify-center rounded-lg text-bold uppercase text-[20px] px-7 py-1 bg-primary mt-10 shadow-xl shadow-indigo-500/40 text-white rounder-lg items-center'>Next</button>
               </div>
             </div>
           }
 
+          
           {ind == 1  && 
             <div>
               <div className='flex'>
@@ -71,7 +78,7 @@ const FormInfo = () => {
                 </ul>
               </div>
               <div className='flex text-white flex-col justify-center items-center'>
-                <button onClick={(e) => {nextbt2(e)}} className='flex justify-center px-7 py-1 bg-primary mt-10 shadow-xl shadow-indigo-500/40 text-white rounder-lg items-center'>Next</button>
+                <button onClick={(e) => {nextbt2(e)}} className='flex justify-center rounded-lg text-bold uppercase text-[20px] px-7 py-1 bg-primary mt-10 shadow-xl shadow-indigo-500/40 text-white rounder-lg items-center'>Next</button>
               </div>
             </div>
           }
@@ -87,7 +94,7 @@ const FormInfo = () => {
                       <h2 className='text-white text-center pt-7 uppercase text-[20px] font-bold'>Weight Loss</h2>
                     </label>
                   </li>
-                  <li className='ml-10'>
+                  <li className='ml-10' onClick={() => setPurpose(1)}>
                     <input type="checkbox" id="myCheckbox2" />
                     <label htmlFor="myCheckbox2">
                       <img className='rounded-lg shadow-lg shadow-indigo-500/40' src="https://i.pinimg.com/236x/40/3a/35/403a350b2cf2032880469988baad11b2.jpg" />
@@ -97,14 +104,11 @@ const FormInfo = () => {
                 </ul>
               </div>
               <div className='flex text-white flex-col justify-center items-center'>
-                <button onClick={(e) => {nextbt3(e)}} className='flex justify-center px-7 py-1 bg-primary mt-10 shadow-xl shadow-indigo-500/40 text-white rounder-lg items-center'>Next</button>
+                <button onClick={(e) => {nextbt3(e)}} className='flex justify-center rounded-lg text-bold uppercase text-[20px] px-7 py-1 bg-primary mt-10 shadow-xl shadow-indigo-500/40 text-white rounder-lg items-center'>Next</button>
               </div>
             </div>
           }
         </form>
-      </div>
-      <div className='hidden bg-black km:block sm:flex justify-center items-center w-[50%] h-screen'>
-        <img src='https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_700,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/246641e8-00d7-42f7-ac92-3207665e35f7.svg'/>
       </div>
     </div>
   )

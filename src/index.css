@@ -54,6 +54,7 @@ ul {
    max-height: 280px;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
+    min-width: 100px;
   }
   
   :checked + label {

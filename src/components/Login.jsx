@@ -137,7 +137,7 @@ const Login = () => {
     
         <ToastContainer />
 
-      <div className='bg-black h-[85%] sm:h-[90%] w-[90%] km:flex rounded-md shadow-red-500/40 '>
+      <div className='bg-black h-[85%] sm:h-[90%] w-[90%] sm:flex rounded-md shadow-red-500/40 '>
 
         <div className='md:w-[50%] flex flex-col justify-center items-center h-full p-10'>
         <form onSubmit={submitHandler}>
@@ -178,7 +178,7 @@ const Login = () => {
         </div>
       
         
-        <div className='hidden bg-black km:block sm:flex justify-center items-center w-[50%] h-screen'>
+        <div className='hidden bg-black sm:block sm:flex justify-center items-center w-[50%] h-screen'>
            <img src='https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_700,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/246641e8-00d7-42f7-ac92-3207665e35f7.svg'/>
         </div>
       </div>
