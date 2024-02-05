@@ -52,9 +52,10 @@ ul {
   
   label img {
    max-height: 280px;
+   min-height: 280;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
-    min-width: 100px;
+    min-width: 120px;
   }
   
   :checked + label {

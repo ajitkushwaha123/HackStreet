@@ -34,14 +34,14 @@ const FormInfo = () => {
             <div className='flex flex-col'>
               <div className='flex'>
                 <ul className='flex justify-center items-center'>
-                  <li onClick={() => setGender(0)} >
+                  <li onClick={() => setGender(0)} className='-translate-y-10 '>
                     <input type="checkbox" id="myCheckbox1" />
                     <label htmlFor="myCheckbox1">
                       <img className='rounded-lg shadow-lg shadow-indigo-500/40' src="https://i.pinimg.com/236x/39/28/59/3928590c6abf5debc6c7ad59c974b9ad.jpg" />
                       <h2 className='text-white text-center pt-7 uppercase text-[20px] font-bold'>Male</h2>
                     </label>
                   </li>
-                  <li onClick={() => setGender(1)} className='ml-10'>
+                  <li onClick={() => setGender(1)} className='ml-10 translate-y-10 '>
                     <input type="checkbox" id="myCheckbox2" />
                     <label htmlFor="myCheckbox2">
                       <img className='rounded-lg shadow-lg shadow-indigo-500/40' src="https://i.pinimg.com/236x/c9/40/27/c940276c7cc6b275f44fa71dd04b557c.jpg" />
