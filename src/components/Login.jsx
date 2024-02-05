@@ -7,6 +7,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../context/UserAuthContext';
 import { ToastContainer , toast  } from 'react-toastify';
+import { FaExclamationCircle } from "react-icons/fa";
+import { BsCheckCircleFill } from "react-icons/bs";
+import { FaSkull } from "react-icons/fa6";
+import { MdMarkEmailUnread } from "react-icons/md";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -16,6 +20,8 @@ const Login = () => {
     const [password , setPassword] = useState("");
     const [email , setEmail] = useState("");
     const [error , setError] = useState("");
+    const [correct  , setCorrect] = useState(-1);
+
 
 
 
@@ -23,10 +29,32 @@ const Login = () => {
         navigate('/register')
     }
 
+    const validator = (e) => {
+        const emailOnChange = e.target.value;
+        setEmail(emailOnChange);
+
+      const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if(email.match(pattern))
+        {
+            console.log("true");
+            setCorrect(1);
+        }
+        else
+        {
+            console.log("false");
+            setCorrect(0);
+        }
+
+    }
+
     const submitHandler = async (e) => {
       e.preventDefault();
       console.log(email , password);
       setError("");
+
+    const emailValue = e.target.value;
+    setEmail(emailValue);
 
       try {
         await login(email, password);
@@ -116,13 +144,16 @@ const Login = () => {
           <h1 className='text-[#EE4F63] text-[35px] text-center font-bold font-poppins'>Login</h1>
           {/* <div>{error}</div> */}
           <div className='text-center flex flex-col py-3 pr-1 items-center justify-center mt-5'>
-            <div className='w-[250px] xs:w-[280px] sm:w-[350px] flex pl-6 bg-black   items-center mt-3 border-2 shadow-sm border-slate-200 rounded-md'>
-              <FaUser className='text-[#7E7C7C]' />
-              <input className='outline-none px-2 py-2 text-white bg-black ' onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email'/>
+          <div className={`w-[280px] xs:w-[280px] sm:w-[350px] flex justify-normal sm:justify-between pl-6 items-center border-2 shadow-sm mt-5 ${correct == 1 ? 'border-green-500' : correct == 0 ? 'border-red-500' : ''} rounded-md`}>
+              <MdMarkEmailUnread className='text-[#7E7C7C] w-[15px] text-[15px] h-[15px]' />
+              <input className='text-white bg-black outline-none py-2 px-2 sm:mr-[70px] text-[15px] ' onChange={(e) => {validator(e)}} type='email' placeholder='Email'/>
+              {correct == '-1' && <FaExclamationCircle className='sm:mr-5 w-[15px] h-[15px] text-[15px]' />}
+              {correct == '0' && <FaSkull className='sm:mr-5 text-primary w-[15px] text-[15px] h-[15px]' />}
+              {correct == '1' && <BsCheckCircleFill className='sm:mr-5 text-green-500 w-[15px] h-[15px]'/>}
             </div>
-            <div className='w-[250px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center border-2 shadow-sm mt-5 border-slate-200 rounded-md'>
-              <IoKeySharp className='text-[#7E7C7C]' />
-              <input className='text-white bg-black outline-none px-2 py-2 ' type='password' onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
+            <div className='w-[280px] xs:w-[280px] sm:w-[350px] flex pl-6 items-center border-2 shadow-sm mt-5 border-slate-200 rounded-md'>
+              <IoKeySharp className='text-[#E0E0E0] text-[15px]' />
+              <input className='text-white bg-black outline-none px-2 py-2 ' onChange={(e) => setPassword(e.target.value)}  type='password' placeholder='Password'/>
             </div>
 
             <div className='flex w-[250px] xs:w-[280px] sm:w-[350px] px-2 py-3 justify-between decoration-none'>
