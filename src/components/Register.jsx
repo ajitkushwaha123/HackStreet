@@ -33,7 +33,6 @@ const Register = () => {
       e.preventDefault();
       try{
         await googleSignIn();
-        navigate('/form');
         toast.success("Login Success", {
           position: "top-right",
           autoClose: 5000,
@@ -44,6 +43,10 @@ const Register = () => {
           progress: undefined,
           theme: "light",
       });
+
+      setTimeout(() => {
+        navigate('/form');
+      } , 2000)
       }catch(err)
       {
         setError(err.message);
@@ -73,7 +76,6 @@ const Register = () => {
         setError("");
         try{
           await signup(email , password);
-          formNav();
           toast.success("Login Success", {
             position: "top-right",
             autoClose: 5000,
@@ -84,6 +86,10 @@ const Register = () => {
             progress: undefined,
             theme: "light",
         });
+
+        setTimeout(() => {
+        formNav();
+        },2000);
         }catch (err){
           setError(err.message);
 
@@ -137,7 +143,7 @@ const Register = () => {
   return (
     <div className='w-full h-screen overflow-hidden bg-black flex justify-center items-center'>
     <ToastContainer />
-      <div className='bg-black text-white h-[85%] sm:h-[90%] w-[90%] km:flex rounded-md shadow-red-500/40 '>
+      <div className='bg-black text-white h-[85%] sm:h-[90%] w-[90%] sm:flex rounded-md shadow-red-500/40 '>
         <div className='md:w-[50%] flex flex-col justify-center items-center h-full p-10'>
         <form onSubmit={handleSubmit}>
           <h1 className='text-primary text-[35px] text-center font-bold font-poppins'>Register</h1>
@@ -180,7 +186,7 @@ const Register = () => {
           </form>
         </div>
 
-        <div className='hidden bg-black km:block sm:flex justify-center items-center w-[50%] h-screen'>
+        <div className='hidden bg-black sm:block sm:flex justify-center items-center w-[50%] h-screen'>
            <img src='https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_700,q_auto:eco,dpr_1,f_auto,fl_progressive/image/vm/246641e8-00d7-42f7-ac92-3207665e35f7.svg'/>
         </div>
       </div>
