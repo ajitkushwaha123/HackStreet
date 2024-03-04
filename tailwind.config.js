@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero': "url('https://tse1.mm.bing.net/th?id=OIP.z_oghUBUgSBZsSTAK5JvbAHaEu&pid=Api&P=0&h=180')",
+        'background' : "url('https://i.pinimg.com/564x/f4/d9/94/f4d994ceea45748fa943cd6fbd22331c.jpg')",
       },
       keyframes: {
         bounce : {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import abs from "../assets/abs.png";
 import { absWork } from '../context/Context';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer , toast  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,6 +10,10 @@ const AbsWorkout = () => {
   const [isActive, setIsActive] = useState(false);
   const [changeText , setChangeText] = useState("Rest In");
   const n = absWork.length;
+
+  let params = useParams();
+  console.log(params);
+  
 
   function toggle() {
     setIsActive(!isActive);

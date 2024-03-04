@@ -16,6 +16,7 @@ import AbsWorkout from './components/AbsWorkout.jsx';
 import Daily from './components/Daily.jsx';
 import FormInfo from './components/FormInfo.jsx';
 import ChestWorkout from './components/ChestWorkout.jsx';
+import Experiment from './components/Experiment.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -35,19 +36,20 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           element={
             <ProtectedRoute>
             <> 
-              <Navbar />
+              {/* <Navbar />
               <Profile />
-              <Footer />
+              <Footer /> */}
             </>
             </ProtectedRoute>
           }/>
           {/* <Route path='/' element={<Layout />} /> */}
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/abs-workout' element={<AbsWorkout />} />
+          <Route path='/abs-workout/' element={<AbsWorkout />} />
           <Route path='/daily-task' element={<Daily />} />
           <Route path='/form' element={<FormInfo />} />
           <Route path='/chest-workout' element={<ChestWorkout />} />
+          <Route path='/experiment' element={<Experiment />} />
         </Routes>
       </Router>
     </UserAuthContextProvider>
